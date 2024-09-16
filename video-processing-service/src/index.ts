@@ -1,5 +1,5 @@
 import express from "express";
-import Ffmpeg from "fluent-ffmpeg";
+import ffmpeg from "fluent-ffmpeg";
 
 const app = express();
 app.use(express.json());
@@ -14,7 +14,7 @@ app.post("/process-video", (req, res) => {
         return;
     }
 
-    Ffmpeg(inputFilePath)
+    ffmpeg(inputFilePath)
         .outputOptions("-vf", "scale=-1:360") //converting to 360p
         .on("end", () => {
             res.status(200).send("Video processing finished successfully.")
