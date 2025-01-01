@@ -5,8 +5,9 @@ import {
     signInWithPopup,
     GoogleAuthProvider,
     onAuthStateChanged,
-    User
+    User,
  } from "firebase/auth";
+ import { getFunctions } from "firebase/functions";
 
 
 const firebaseConfig = {
@@ -21,6 +22,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
+export const functions = getFunctions();
 
 /**
  * Signs the user in with a Google popup.

@@ -43,7 +43,7 @@ export function convertVideo(rawVideoName: string, processedVideoName: string) {
 
 
 /**
- * @param fileName - The name of the file to download from the 
+ * @param fileName - The name of the file to download from the
  * {@link rawVideoBucketName} bucket into the {@link localRawVideoPath} folder.
  * @returns A promise that resolves when the file has been downloaded.
  */
@@ -61,7 +61,7 @@ export async function downloadRawVideo(fileName: string) {
 
 
 /**
- * @param fileName - The name of the file to upload from the 
+ * @param fileName - The name of the file to upload from the
  * {@link localProcessedVideoPath} folder into the {@link processedVideoBucketName}.
  * @returns A promise that resolves when the file has been uploaded.
  */
@@ -86,7 +86,7 @@ export async function uploadProcessedVideo(fileName: string) {
  * @param fileName - The name of the file to delete from the
  * {@link localRawVideoPath} folder.
  * @returns A promise that resolves when the file has been deleted.
- * 
+ *
  */
 export function deleteRawVideo(fileName: string) {
   return deleteFile(`${localRawVideoPath}/${fileName}`);
@@ -97,12 +97,11 @@ export function deleteRawVideo(fileName: string) {
 * @param fileName - The name of the file to delete from the
 * {@link localProcessedVideoPath} folder.
 * @returns A promise that resolves when the file has been deleted.
-* 
+*
 */
 export function deleteProcessedVideo(fileName: string) {
   return deleteFile(`${localProcessedVideoPath}/${fileName}`);
 }
-
 
 /**
  * @param filePath - The path of the file to delete.
