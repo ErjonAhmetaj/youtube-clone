@@ -3,6 +3,7 @@ YouTube Skeleton Clone
 
 Hello and welcome to my GitHub repository for the YouTube Skeleton Clone project! This is a streamlined version of YouTube that I developed. I’m excited to walk you through how it’s put together, so let’s jump right in!
 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -51,6 +52,7 @@ Authentication: Firebase Auth for managing user sign-ins.
 High-Level Overview
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+![high-level-architecture](https://github.com/user-attachments/assets/f0e7f68d-727b-4815-92b5-31d001e336ba)
 
 High-Level Architecture Diagram
 
