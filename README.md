@@ -2,7 +2,7 @@ YouTube Skeleton Clone
 Hello and welcome to my GitHub repository for the YouTube Skeleton Clone project! This is a streamlined version of YouTube that I developed. I’m excited to walk you through how it’s put together, so let’s jump right in!
 
 Table of Contents
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 Background
 Project Goals
 Tech Stack
@@ -13,12 +13,12 @@ Conclusion
 References
 
 Background
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 YouTube is a phenomenal platform that allows anyone to upload, watch, rate, share, and comment on videos. However, replicating the entire service is incredibly complex, especially considering its massive daily user base. Instead of building an all-encompassing clone, I focused on a few core capabilities to create a simplified experience.
 
 Project Goals
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 Below are the main objectives I aimed to fulfill with this project:
 
 User Authentication: Let users sign in and out via Google accounts.
@@ -27,7 +27,7 @@ Video Transcoding: Automatically convert videos into various formats (such as 36
 Video Viewing: Allow both logged-in and guest users to explore and watch videos.
 
 Tech Stack
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 Before diving into the system design, here is a quick look at the technologies used:
 
@@ -40,9 +40,10 @@ Web Client: A Next.js application hosted on Cloud Run.
 Authentication: Firebase Auth for managing user sign-ins.
 
 High-Level Overview
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 ![high-level-architecture](https://github.com/user-attachments/assets/360dfb98-a21f-46be-bc9e-11fdcaab9dc0)
+
 High-Level Architecture Diagram
 Here’s a quick snapshot of the project’s overall architecture:
 
@@ -70,7 +71,7 @@ Authentication (Firebase Auth)
 Manages Google Sign-In authentication. Easy to set up and integrate with the web client.
 
 In-Depth Design
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 User Sign-Up
 I used Firebase Auth to handle sign-up via Google accounts. It creates a user record with a unique ID and email address. Any extra user details (e.g., name and profile picture) live in Firestore. Using Firebase Functions to create the user document ensures reliability over purely client-side actions.
@@ -87,8 +88,7 @@ Automatic message buffering in Pub/Sub, allowing dynamic scaling in Cloud Run.
 Once transcoding is finished, the processed videos are placed in a public Cloud Storage bucket, and metadata is stored in Firestore for seamless display in the client.
 
 Challenges and Future Improvements
-—————————————————————————————
-
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 Limitations
 Long-Lived HTTP Requests
 
@@ -120,12 +120,12 @@ Add a CDN to further reduce latency and improve streaming.
 Introduce unit and integration tests to boost code quality.
 
 Conclusion
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 Thank you for taking the time to explore this YouTube Skeleton Clone project! I hope you found it useful for understanding different architecture and design considerations. Constructing an app akin to YouTube or Twitter can be a massive venture that requires significant effort and strategic decisions.
 
 References
-—————————————————————————————
+———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
 
 This project was built with insights from these resources:
 
