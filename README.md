@@ -3,6 +3,9 @@ YouTube Skeleton Clone
 
 Hello and welcome to my GitHub repository for the YouTube Skeleton Clone project! This is a streamlined version of YouTube that I developed. I’m excited to walk you through how it’s put together, so let’s jump right in!
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 Table of Contents
 Background
 Project Goals
@@ -12,17 +15,28 @@ In-Depth Design
 Challenges and Future Improvements
 Conclusion
 References
+
 Background
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 YouTube is a phenomenal platform that allows anyone to upload, watch, rate, share, and comment on videos. However, replicating the entire service is incredibly complex, especially considering its massive daily user base. Instead of building an all-encompassing clone, I focused on a few core capabilities to create a simplified experience.
 
+
+
 Project Goals
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Below are the main objectives I aimed to fulfill with this project:
 
 User Authentication: Let users sign in and out via Google accounts.
 Video Uploading: Permit authenticated users to upload their videos.
 Video Transcoding: Automatically convert videos into various formats (such as 360p and 720p) for broader accessibility.
 Video Viewing: Allow both logged-in and guest users to explore and watch videos.
+
+
 Tech Stack
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Before diving into the system design, here is a quick look at the technologies used:
 
 Video Storage: Google Cloud Storage for hosting original and processed video files.
@@ -32,8 +46,14 @@ Metadata Storage: Firestore to store and manage video metadata.
 API: Firebase Functions for a simple backend API.
 Web Client: A Next.js application hosted on Cloud Run.
 Authentication: Firebase Auth for managing user sign-ins.
+
+
 High-Level Overview
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 High-Level Architecture Diagram
+
 Here’s a quick snapshot of the project’s overall architecture:
 
 Video Storage (Cloud Storage)
@@ -67,12 +87,21 @@ Only authenticated users can upload videos, associating each upload with the use
 Video Processing
 As soon as a video is uploaded, processing begins—but this can quickly overwhelm the system if many uploads arrive at once. Therefore, a Cloud Pub/Sub message queue was introduced to separate uploads from processing. This approach offers:
 
+
+
 Decoupled upload and processing steps.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Pub/Sub push subscriptions for real-time message delivery to workers.
 Automatic message buffering in Pub/Sub, allowing dynamic scaling in Cloud Run.
 Once transcoding is finished, the processed videos are placed in a public Cloud Storage bucket, and metadata is stored in Firestore for seamless display in the client.
 
+
+
+
 Challenges and Future Improvements
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Limitations
 Long-Lived HTTP Requests
 
@@ -89,7 +118,11 @@ By default, Google Cloud Storage offers basic streaming capabilities. However, i
 Content Delivery Network
 
 Serving videos via a CDN could greatly enhance performance by reducing latency. Users watching from servers close to their location would have a smoother experience.
+
+
 Future Work
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Here are a few ideas for improving and expanding the project:
 
 Show user profile pictures and emails in the client.
@@ -101,12 +134,21 @@ Implement channel subscriptions.
 Schedule automatic cleanup of raw videos in Cloud Storage once processing is complete.
 Add a CDN to further reduce latency and improve streaming.
 Introduce unit and integration tests to boost code quality.
+
+
 Conclusion
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Thank you for taking the time to explore this YouTube Skeleton Clone project! I hope you found it useful for understanding different architecture and design considerations. Constructing an app akin to YouTube or Twitter can be a massive venture that requires significant effort and strategic decisions.
 
 I’m always looking to improve, so I greatly value your feedback. If you have any thoughts or suggestions, please feel free to let me know!
 
+
+
+
 References
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 This project was built with insights from these resources:
 
 Neetcode’s Full Stack Development Course
